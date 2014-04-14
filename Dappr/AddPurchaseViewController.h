@@ -11,5 +11,7 @@
 
 @interface AddPurchaseViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+- (IBAction)saveButtonPressed:(id)sender;
 
 @end

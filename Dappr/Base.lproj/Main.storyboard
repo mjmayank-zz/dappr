@@ -78,9 +78,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="X3H-Wg-xf5"/>
+                    <navigationItem key="navigationItem" id="X3H-Wg-xf5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0aq-QH-5KZ">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="jVB-4s-hRD" id="v0e-ed-2ud"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="Shl-c5-qR2" id="1iy-fA-tR6"/>
+                        <outlet property="saveButton" destination="0aq-QH-5KZ" id="DOf-8d-aeO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1c-s8-HN4" userLabel="First Responder" sceneMemberID="firstResponder"/>

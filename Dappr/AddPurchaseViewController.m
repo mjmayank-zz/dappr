@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     
     [self selectPhoto];
 }
@@ -58,6 +62,13 @@
     
 }
 
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    
+    [picker dismissViewControllerAnimated:YES completion:^{
+            [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -68,5 +79,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)saveButtonPressed:(id)sender {
+    PFObject *item = [[PFObject alloc] initWithClassName:@"ClothingItem"];
+    
+    [item saveInBackground];
+}
 
 @end
