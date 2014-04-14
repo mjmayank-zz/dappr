@@ -23,6 +23,7 @@
 		8F24185F18FC670900B569A4 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F24185E18FC670900B569A4 /* FeedViewController.m */; };
 		8F24186318FC695A00B569A4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F24186218FC695A00B569A4 /* Social.framework */; };
 		8F24186718FC6F8C00B569A4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F24186618FC6F8C00B569A4 /* FacebookSDK.framework */; };
+		8F24186A18FC700900B569A4 /* AddOutfitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F24186918FC700900B569A4 /* AddOutfitViewController.m */; };
 		8F31E84C18F733C100E2D00F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F31E84B18F733C100E2D00F /* Parse.framework */; };
 		8F31E84E18F733DF00E2D00F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F31E84D18F733DF00E2D00F /* AudioToolbox.framework */; };
 		8F31E85018F733F500E2D00F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F31E84F18F733F500E2D00F /* CFNetwork.framework */; };
@@ -69,6 +70,8 @@
 		8F24185E18FC670900B569A4 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		8F24186218FC695A00B569A4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8F24186618FC6F8C00B569A4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		8F24186818FC700900B569A4 /* AddOutfitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOutfitViewController.h; sourceTree = "<group>"; };
+		8F24186918FC700900B569A4 /* AddOutfitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOutfitViewController.m; sourceTree = "<group>"; };
 		8F31E84B18F733C100E2D00F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8F31E84D18F733DF00E2D00F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8F31E84F18F733F500E2D00F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 				8F24185E18FC670900B569A4 /* FeedViewController.m */,
 				8F9130D318FC62F200A4A120 /* AddPurchaseViewController.h */,
 				8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */,
+				8F24186818FC700900B569A4 /* AddOutfitViewController.h */,
+				8F24186918FC700900B569A4 /* AddOutfitViewController.m */,
 				8F1D6AC118F6464F0073B818 /* Images.xcassets */,
 				8F1D6AB018F6464F0073B818 /* Supporting Files */,
 			);
@@ -306,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F24186A18FC700900B569A4 /* AddOutfitViewController.m in Sources */,
 				8F1D6ABA18F6464F0073B818 /* AppDelegate.m in Sources */,
 				8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */,
 				8F24185F18FC670900B569A4 /* FeedViewController.m in Sources */,
@@ -437,7 +443,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/mjmayank/Documents,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dappr/Dappr-Prefix.pch";
@@ -455,7 +460,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/mjmayank/Documents,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dappr/Dappr-Prefix.pch";

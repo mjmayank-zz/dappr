@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1495" y="-627"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Outfit View Controller-->
         <scene sceneID="qZs-ZH-Tn8">
             <objects>
-                <viewController id="nf3-U8-3ie" sceneMemberID="viewController">
+                <viewController id="nf3-U8-3ie" customClass="AddOutfitViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ec4-Jb-yT8"/>
                         <viewControllerLayoutGuide type="bottom" id="yJB-iC-mzf"/>
@@ -119,6 +119,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Oea-gY-sr8"/>
                     <connections>
+                        <outlet property="searchBar" destination="sdO-me-Dgl" id="J7P-xh-6ac"/>
                         <outlet property="searchDisplayController" destination="eTn-c1-hRb" id="guh-wB-WhY"/>
                     </connections>
                 </viewController>
