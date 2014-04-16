@@ -124,7 +124,7 @@
 
 - (void) animateTextField: (UIView*) view up: (BOOL) up withInfo:(NSDictionary *)userInfo
 {
-    const int movementDistance = 180; // tweak as needed
+    const int movementDistance = 215; // tweak as needed
     NSTimeInterval movementDuration;
     UIViewAnimationCurve animationCurve;
     [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
