@@ -114,6 +114,11 @@
                                     <outlet property="delegate" destination="nf3-U8-3ie" id="lxu-rR-KkM"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ze5-Qi-8ad">
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -121,6 +126,7 @@
                     <connections>
                         <outlet property="searchBar" destination="sdO-me-Dgl" id="J7P-xh-6ac"/>
                         <outlet property="searchDisplayController" destination="eTn-c1-hRb" id="guh-wB-WhY"/>
+                        <outlet property="tableView" destination="Ze5-Qi-8ad" id="vDP-9s-ois"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLB-9C-cpY" userLabel="First Responder" sceneMemberID="firstResponder"/>

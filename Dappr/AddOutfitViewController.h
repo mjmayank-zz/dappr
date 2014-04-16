@@ -10,5 +10,6 @@
 
 @interface AddOutfitViewController : UIViewController<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
