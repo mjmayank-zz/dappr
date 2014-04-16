@@ -31,7 +31,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.array = [NSArray arrayWithObjects:@"blue jeans", @"black shirt", nil];
+    self.array = [[NSArray arrayWithObjects:@"blue jeans", @"black shirt", nil] mutableCopy];
 }
 
 - (void)didReceiveMemoryWarning
