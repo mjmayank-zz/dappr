@@ -29,6 +29,12 @@
     // Do any additional setup after loading the view.
     [self selectPhoto];
     
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(keyboardWillShow:) name:
+     UIKeyboardWillShowNotification object:nil];
+    [nc addObserver:self selector:@selector(keyboardWillHide:) name:
+     UIKeyboardWillHideNotification object:nil];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -92,6 +98,34 @@
     item[@"price"] = _priceTextField.text;
 
     [item saveInBackground];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    [self animateTextField:self.view up:YES withInfo:notification.userInfo];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    [self animateTextField:self.view up:NO withInfo:notification.userInfo];
+}
+
+- (void) animateTextField: (UIView*) view up: (BOOL) up withInfo:(NSDictionary *)userInfo
+{
+    const int movementDistance = 180; // tweak as needed
+    NSTimeInterval movementDuration;
+    UIViewAnimationCurve animationCurve;
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&movementDuration]; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationCurve: animationCurve];
+    [UIView setAnimationDuration: movementDuration];
+    view.frame = CGRectOffset(view.frame, 0, movement);
+    [UIView commitAnimations];
 }
 
 @end
