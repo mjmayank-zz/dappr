@@ -13,5 +13,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)saveButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
+@property (strong, nonatomic) IBOutlet UITextField *priceTextField;
 
 @end
