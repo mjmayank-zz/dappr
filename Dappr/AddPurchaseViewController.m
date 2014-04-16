@@ -41,6 +41,9 @@
     
     [self.priceLabel setFont:avenir];
     [self.tagsLabel setFont:avenir];
+    
+    self.tagsField.layer.borderWidth = 1.0f;
+    self.tagsField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
