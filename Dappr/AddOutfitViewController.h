@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddOutfitViewController : UIViewController<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate>
+@interface AddOutfitViewController : UIViewController<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray * array;
+@property (strong, nonatomic) NSMutableDictionary * tags;
 
 @end
