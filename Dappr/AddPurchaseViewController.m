@@ -143,7 +143,4 @@
     [self selectPhoto];
 }
 
-- (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue {
-    NSLog(@"fuck mayank\n");
-}
 @end

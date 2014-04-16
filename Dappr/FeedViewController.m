@@ -32,7 +32,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [self promptLogin];
+//    [self promptLogin];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,8 +70,8 @@
     }
 }
 
-- (IBAction)cancelButtonClickedAgain:(UIStoryboardSegue *)segue {
-    NSLog(@"fuck mayank\n");
+- (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue {
+    NSLog(@"fuck mayank");
 }
 
 @end

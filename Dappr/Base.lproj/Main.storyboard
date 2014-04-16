@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="AU4-Ku-vwB">
             <objects>
-                <viewController id="ty2-JS-ced" sceneMemberID="viewController">
+                <viewController id="ty2-JS-ced" customClass="FeedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TCI-Pl-BnC"/>
                         <viewControllerLayoutGuide type="bottom" id="C3d-0o-4aF"/>
@@ -150,7 +150,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lVl-Z1-rFz">
                                             <connections>
                                                 <action selector="cancelButtonClicked:" destination="jVB-4s-hRD" id="xVm-Rn-AKE"/>
-                                                <segue destination="DGL-S4-jeW" kind="unwind" unwindAction="cancelButtonClickedAgain:" id="QGn-3N-BcG"/>
+                                                <segue destination="DGL-S4-jeW" kind="unwind" unwindAction="cancelButtonClicked:" id="fLq-72-gMt"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="0aq-QH-5KZ">
