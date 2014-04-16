@@ -28,6 +28,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.searchBar.delegate = self;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    self.array = [NSArray arrayWithObjects:@"blue jeans", @"black shirt", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +50,30 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - DataSourceDelegate
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [self.array objectAtIndex:indexPath.row];
+    return cell;
+
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return [self.array count];
+}
+
+#pragma mark - TableViewDelegate
 
 
 
