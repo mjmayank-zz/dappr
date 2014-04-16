@@ -33,7 +33,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -51,14 +50,18 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [self.array count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.searchResults count];
+        
+    } else {
+        return [self.array count];
+    }
 }
 
 
@@ -72,7 +75,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [self.array objectAtIndex:indexPath.row];
+    NSString *clothing = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        clothing = [self.searchResults objectAtIndex:indexPath.row];
+    } else {
+        clothing = [self.array objectAtIndex:indexPath.row];
+    }
+    
+    cell.textLabel.text = clothing;
     return cell;
 }
 
@@ -130,8 +140,18 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"self contains[c] %@", searchText];
     self.searchResults = [self.array filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 @end
