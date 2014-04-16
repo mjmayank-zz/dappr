@@ -17,5 +17,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *priceTextField;
 @property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *tagsLabel;
+@property (strong, nonatomic) IBOutlet UIButton *chooseButton;
+- (IBAction)showChooser:(id)sender;
+- (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue;
 
 @end

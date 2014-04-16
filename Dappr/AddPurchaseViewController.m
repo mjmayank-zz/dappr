@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self selectPhoto];
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(keyboardWillShow:) name:
@@ -70,6 +69,7 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = chosenImage;
+    [self.chooseButton setHidden:YES];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
@@ -94,6 +94,7 @@
 */
 
 - (IBAction)saveButtonPressed:(id)sender {
+    NSLog(@"Save pressed");
     PFObject *item = [[PFObject alloc] initWithClassName:@"ClothingItem"];
 
     // Save the photo
@@ -135,4 +136,11 @@
     [UIView commitAnimations];
 }
 
+- (IBAction)showChooser:(id)sender {
+    [self selectPhoto];
+}
+
+- (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue {
+    NSLog(@"fuck mayank\n");
+}
 @end

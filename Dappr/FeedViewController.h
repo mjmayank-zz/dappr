@@ -11,4 +11,6 @@
 
 @interface FeedViewController : UIViewController<PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
+- (IBAction)cancelButtonClickedAgain:(UIStoryboardSegue *)segue;
+
 @end

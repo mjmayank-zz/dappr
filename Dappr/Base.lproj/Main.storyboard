@@ -20,7 +20,7 @@
                     <navigationItem key="navigationItem" id="SyB-Kl-dGy">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="Drk-lb-GHl">
                             <connections>
-                                <segue destination="jVB-4s-hRD" kind="push" id="T6k-Z4-D4t"/>
+                                <segue destination="jVB-4s-hRD" kind="modal" identifier="openedAddView" id="T6k-Z4-D4t"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="zK4-Qm-xEW">
@@ -132,17 +132,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oh-fr-MeD">
+                                <rect key="frame" x="137" y="210" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choose">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showChooser:" destination="jVB-4s-hRD" eventType="touchUpInside" id="95k-Ss-Syy"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pR8-JZ-cYl">
+                                <rect key="frame" x="0.0" y="21" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Clothing" id="L8v-Y8-d5y">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lVl-Z1-rFz">
+                                            <connections>
+                                                <action selector="cancelButtonClicked:" destination="jVB-4s-hRD" id="xVm-Rn-AKE"/>
+                                                <segue destination="DGL-S4-jeW" kind="unwind" unwindAction="cancelButtonClickedAgain:" id="QGn-3N-BcG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0aq-QH-5KZ">
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="jVB-4s-hRD" id="PcQ-Ge-UAV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="X3H-Wg-xf5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0aq-QH-5KZ">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="jVB-4s-hRD" id="v0e-ed-2ud"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="chooseButton" destination="9oh-fr-MeD" id="TLG-KO-fER"/>
                         <outlet property="imageView" destination="Shl-c5-qR2" id="1iy-fA-tR6"/>
                         <outlet property="priceLabel" destination="iXD-fA-LlF" id="wrN-0i-w9t"/>
                         <outlet property="priceTextField" destination="pD1-XT-HxY" id="s42-ib-AzT"/>
@@ -152,6 +177,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1c-s8-HN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DGL-S4-jeW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1495" y="-627"/>
         </scene>
