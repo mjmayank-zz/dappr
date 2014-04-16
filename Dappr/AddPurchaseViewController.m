@@ -27,12 +27,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self selectPhoto];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    [self selectPhoto];
 }
 
 - (void)didReceiveMemoryWarning
