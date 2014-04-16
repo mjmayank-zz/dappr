@@ -38,8 +38,10 @@
     UIFont *bebas = [UIFont fontWithName:@"Bebas Neue" size:17.0f];
     UIFont *proximaSmall = [UIFont fontWithName:@"ProximaNova-Regular" size:14.0];
     UIFont *proximaBig = [UIFont fontWithName:@"ProximaNova-Regular" size:17.0];
+    UIFont *avenir = [UIFont fontWithName:@"Avenir Medium" size:17.0];
     
-    
+    [self.priceLabel setFont:avenir];
+    [self.tagsLabel setFont:avenir];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

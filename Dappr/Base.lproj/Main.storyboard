@@ -94,8 +94,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="Shl-c5-qR2" id="1iy-fA-tR6"/>
+                        <outlet property="priceLabel" destination="iXD-fA-LlF" id="wrN-0i-w9t"/>
                         <outlet property="priceTextField" destination="pD1-XT-HxY" id="s42-ib-AzT"/>
                         <outlet property="saveButton" destination="0aq-QH-5KZ" id="DOf-8d-aeO"/>
+                        <outlet property="tagsLabel" destination="5Gp-3V-G2H" id="OMD-bY-a9a"/>
                         <outlet property="titleTextField" destination="XPV-Y3-re9" id="nHi-eS-W8B"/>
                     </connections>
                 </viewController>

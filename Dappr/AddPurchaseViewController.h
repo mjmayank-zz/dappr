@@ -15,5 +15,7 @@
 - (IBAction)saveButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UITextField *priceTextField;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *tagsLabel;
 
 @end
