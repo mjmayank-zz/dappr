@@ -76,5 +76,13 @@
 #pragma mark - TableViewDelegate
 
 
+#pragma mark - SearchDelegate
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    self.searchResults = [self.array filteredArrayUsingPredicate:resultPredicate];
+}
+
 
 @end

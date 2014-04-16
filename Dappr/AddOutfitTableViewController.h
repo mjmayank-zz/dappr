@@ -1,14 +1,15 @@
 //
-//  AddOutfitViewController.h
+//  AddOutfitTableViewController.h
 //  Dappr
 //
-//  Created by Mayank Jain on 4/14/14.
+//  Created by Mayank Jain on 4/15/14.
 //  Copyright (c) 2014 Mayank Jain. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AddOutfitViewController : UIViewController<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface AddOutfitTableViewController : UITableViewController<UISearchBarDelegate>
+
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * array;

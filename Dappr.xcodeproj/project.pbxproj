@@ -38,6 +38,7 @@
 		8F3B35C018FE179700CECDA3 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F3B35BF18FE179700CECDA3 /* ProximaNova-Regular.otf */; };
 		8F3B35C218FE17A500CECDA3 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F3B35C118FE17A500CECDA3 /* BebasNeue.otf */; };
 		8F3B35C418FE18FB00CECDA3 /* AvenirLTStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F3B35C318FE18FB00CECDA3 /* AvenirLTStd-Medium.otf */; };
+		8F3B35C718FE1BCA00CECDA3 /* AddOutfitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B35C618FE1BCA00CECDA3 /* AddOutfitTableViewController.m */; };
 		8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		8F3B35BF18FE179700CECDA3 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		8F3B35C118FE17A500CECDA3 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		8F3B35C318FE18FB00CECDA3 /* AvenirLTStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Medium.otf"; sourceTree = "<group>"; };
+		8F3B35C518FE1BCA00CECDA3 /* AddOutfitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOutfitTableViewController.h; sourceTree = "<group>"; };
+		8F3B35C618FE1BCA00CECDA3 /* AddOutfitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOutfitTableViewController.m; sourceTree = "<group>"; };
 		8F9130D318FC62F200A4A120 /* AddPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPurchaseViewController.h; sourceTree = "<group>"; };
 		8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPurchaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +189,8 @@
 				8F24185E18FC670900B569A4 /* FeedViewController.m */,
 				8F9130D318FC62F200A4A120 /* AddPurchaseViewController.h */,
 				8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */,
+				8F3B35C518FE1BCA00CECDA3 /* AddOutfitTableViewController.h */,
+				8F3B35C618FE1BCA00CECDA3 /* AddOutfitTableViewController.m */,
 				8F24186818FC700900B569A4 /* AddOutfitViewController.h */,
 				8F24186918FC700900B569A4 /* AddOutfitViewController.m */,
 				8F1D6AC118F6464F0073B818 /* Images.xcassets */,
@@ -323,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3B35C718FE1BCA00CECDA3 /* AddOutfitTableViewController.m in Sources */,
 				8F24186A18FC700900B569A4 /* AddOutfitViewController.m in Sources */,
 				8F1D6ABA18F6464F0073B818 /* AppDelegate.m in Sources */,
 				8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */,
