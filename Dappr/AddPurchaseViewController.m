@@ -35,6 +35,11 @@
     [nc addObserver:self selector:@selector(keyboardWillHide:) name:
      UIKeyboardWillHideNotification object:nil];
     
+    UIFont *bebas = [UIFont fontWithName:@"Bebas Neue" size:17.0f];
+    UIFont *proximaSmall = [UIFont fontWithName:@"ProximaNova-Regular" size:14.0];
+    UIFont *proximaBig = [UIFont fontWithName:@"ProximaNova-Regular" size:17.0];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
