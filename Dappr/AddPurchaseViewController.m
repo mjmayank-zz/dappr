@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self selectPhoto];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -81,7 +82,15 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     PFObject *item = [[PFObject alloc] initWithClassName:@"ClothingItem"];
-    
+
+    // Save the photo
+    NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
+    PFFile *imageFile = [PFFile fileWithName:@"clothing.png" data:imageData];
+
+    item[@"clothingImage"] = imageFile;
+    item[@"title"] = _titleTextField.text;
+    item[@"price"] = _priceTextField.text;
+
     [item saveInBackground];
 }
 
