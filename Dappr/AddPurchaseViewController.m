@@ -107,7 +107,8 @@
     item[@"clothingImage"] = imageFile;
     item[@"title"] = _titleTextField.text;
     item[@"price"] = _priceTextField.text;
-
+    item[@"timesWorn"] = 0;
+    
     [item saveInBackground];
 }
 
