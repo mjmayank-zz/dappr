@@ -41,6 +41,7 @@
 		8F86007E18FF721700D9F60E /* zerog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F86007D18FF721700D9F60E /* zerog.jpg */; };
 		8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */; };
 		8FDC5CAB18FFC2C300E0037D /* customCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5CAA18FFC2C300E0037D /* customCell.m */; };
+		8FDC5CAE18FFC6C800E0037D /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5CAD18FFC6C800E0037D /* TitleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPurchaseViewController.m; sourceTree = "<group>"; };
 		8FDC5CA918FFC2C300E0037D /* customCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customCell.h; sourceTree = "<group>"; };
 		8FDC5CAA18FFC2C300E0037D /* customCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCell.m; sourceTree = "<group>"; };
+		8FDC5CAC18FFC6C800E0037D /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
+		8FDC5CAD18FFC6C800E0037D /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				8FDC5CAA18FFC2C300E0037D /* customCell.m */,
 				8F24185D18FC670900B569A4 /* FeedViewController.h */,
 				8F24185E18FC670900B569A4 /* FeedViewController.m */,
+				8FDC5CAC18FFC6C800E0037D /* TitleView.h */,
+				8FDC5CAD18FFC6C800E0037D /* TitleView.m */,
 				8F9130D318FC62F200A4A120 /* AddPurchaseViewController.h */,
 				8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */,
 				8F3B35C518FE1BCA00CECDA3 /* AddOutfitTableViewController.h */,
@@ -344,6 +349,7 @@
 				8F3B35C718FE1BCA00CECDA3 /* AddOutfitTableViewController.m in Sources */,
 				8F1D6ABA18F6464F0073B818 /* AppDelegate.m in Sources */,
 				8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */,
+				8FDC5CAE18FFC6C800E0037D /* TitleView.m in Sources */,
 				8F24185F18FC670900B569A4 /* FeedViewController.m in Sources */,
 				8F1D6AB618F6464F0073B818 /* main.m in Sources */,
 			);

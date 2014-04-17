@@ -29,7 +29,11 @@
     // Do any additional setup after loading the view.
     
     self.array = [[NSArray alloc] init];
-    self.images = [[NSMutableDictionary alloc] init];
+    self.objs = [[NSMutableDictionary alloc] init];
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Outfit"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -52,13 +56,20 @@
             // The find succeeded
             NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
             
-            for(PFObject * obj in objects){
-                PFFile *theImage = obj[@"clothingImage"];
-                NSData *imageData = [theImage getData];
-                UIImage * data = [UIImage imageWithData:imageData];
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_async(queue, ^{
                 
-                [self.images setObject:data forKey:obj.objectId];
-            }
+                for(PFObject * obj in objects){
+                    
+                    [self.objs setObject:obj forKey:obj.objectId];
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [self.collectionView reloadData];
+                    
+                });
+            });
             
         } else {
             // Log details of the failure
@@ -133,13 +144,34 @@
 //        UIImage * data = [UIImage imageWithData:imageData];
 //        [image setImage:data];
 //    }];
-    [cell.imageView setImage:[self.images objectForKey:[self.array objectAtIndex:indexPath.section][@"Clothes"][0][indexPath.row] ]];
+    
+    PFFile *theImage = [self.objs objectForKey:[self.array objectAtIndex:indexPath.section][@"Clothes"][0][indexPath.row] ][@"clothingImage"];
+    NSData *imageData = [theImage getData];
+    UIImage * data = [UIImage imageWithData:imageData];
+    
+    [cell.imageView setImage:data];
     
     return cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    UICollectionReusableView * reuseableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"FeedTitleView" forIndexPath:indexPath];
+    
+    TitleView * reuseableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"FeedTitleView" forIndexPath:indexPath];
+    
+    int sum = 0;
+    
+    for(NSString * objID in [self.array objectAtIndex:indexPath.section][@"Clothes"][0]){
+        if([self.objs[objID][@"timesWorn"] integerValue]){
+            sum = [self.objs[objID][@"price"] intValue]/[self.objs[objID][@"timesWorn"] integerValue];
+        }
+    }
+    
+    reuseableView.dateLabel.text = [self.array objectAtIndex:indexPath.section][@"date"];
+    reuseableView.countLabel.text = [NSString stringWithFormat:@"Value: $%d", sum ];
+    
+    UIFont *avenir = [UIFont fontWithName:@"Avenir Medium" size:17.0];
+    [reuseableView.dateLabel setFont:avenir];
+    [reuseableView.countLabel setFont:avenir];
     
     return reuseableView;
 }
