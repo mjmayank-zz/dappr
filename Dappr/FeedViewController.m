@@ -28,32 +28,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.array = [[NSArray alloc] init];
+    self.images = [[NSMutableDictionary alloc] init];
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Outfit"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
+            // The find succeeded
+            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
             
             self.array = objects;
             
+            [self.collectionView reloadData];
             
-            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
-            
-            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            dispatch_async(queue, ^{
-
-
-                dispatch_async(dispatch_get_main_queue(), ^{
-
-                    
-                    
-                });
-            });
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-
+    query = [PFQuery queryWithClassName:@"ClothingItem"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded
+            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
+            
+            for(PFObject * obj in objects){
+                PFFile *theImage = obj[@"clothingImage"];
+                NSData *imageData = [theImage getData];
+                UIImage * data = [UIImage imageWithData:imageData];
+                
+                [self.images setObject:data forKey:obj.objectId];
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -103,16 +114,26 @@
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3;
+    return [[self.array objectAtIndex:section][@"Clothes"][0] count];
+//    return 1;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
-    return 5;
+    return [self.array count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedCell" forIndexPath:indexPath];
+    customCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedCell" forIndexPath:indexPath];
+    
+//    PFQuery *query = [PFQuery queryWithClassName:@"ClothingItem"];
+//    [query getObjectInBackgroundWithId:[self.array objectAtIndex:indexPath.section][@"Clothes"][0][indexPath.row] block:^(PFObject *clothing, NSError *error) {
+//        PFFile *theImage = clothing[@"clothingImage"];
+//        NSData *imageData = [theImage getData];
+//        UIImage * data = [UIImage imageWithData:imageData];
+//        [image setImage:data];
+//    }];
+    [cell.imageView setImage:[self.images objectForKey:[self.array objectAtIndex:indexPath.section][@"Clothes"][0][indexPath.row] ]];
     
     return cell;
 }
