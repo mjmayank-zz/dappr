@@ -27,6 +27,30 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"outfits"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            
+            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
+            
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_async(queue, ^{
+
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+
+                    
+                    
+                });
+            });
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -72,6 +96,28 @@
 
 - (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue {
     NSLog(@"fuck mayank");
+}
+
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 3;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    
+    return 5;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView * reuseableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"FeedTitleView" forIndexPath:indexPath];
+    
+    return reuseableView;
 }
 
 @end

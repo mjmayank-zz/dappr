@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface AddPurchaseViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate,
-    UITextViewDelegate>
+@interface AddPurchaseViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)saveButtonPressed:(id)sender;

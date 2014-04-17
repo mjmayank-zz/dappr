@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface FeedViewController : UIViewController<PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface FeedViewController : UIViewController<PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 - (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue;
 

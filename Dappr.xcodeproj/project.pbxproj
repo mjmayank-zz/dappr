@@ -38,6 +38,7 @@
 		8F3B35C218FE17A500CECDA3 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F3B35C118FE17A500CECDA3 /* BebasNeue.otf */; };
 		8F3B35C418FE18FB00CECDA3 /* AvenirLTStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F3B35C318FE18FB00CECDA3 /* AvenirLTStd-Medium.otf */; };
 		8F3B35C718FE1BCA00CECDA3 /* AddOutfitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3B35C618FE1BCA00CECDA3 /* AddOutfitTableViewController.m */; };
+		8F86007E18FF721700D9F60E /* zerog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F86007D18FF721700D9F60E /* zerog.jpg */; };
 		8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		8F3B35C318FE18FB00CECDA3 /* AvenirLTStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Medium.otf"; sourceTree = "<group>"; };
 		8F3B35C518FE1BCA00CECDA3 /* AddOutfitTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOutfitTableViewController.h; sourceTree = "<group>"; };
 		8F3B35C618FE1BCA00CECDA3 /* AddOutfitTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOutfitTableViewController.m; sourceTree = "<group>"; };
+		8F86007D18FF721700D9F60E /* zerog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zerog.jpg; sourceTree = "<group>"; };
 		8F9130D318FC62F200A4A120 /* AddPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPurchaseViewController.h; sourceTree = "<group>"; };
 		8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPurchaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,10 +178,9 @@
 		8F1D6AAF18F6464F0073B818 /* Dappr */ = {
 			isa = PBXGroup;
 			children = (
-				8F3B35BF18FE179700CECDA3 /* ProximaNova-Regular.otf */,
-				8F3B35C118FE17A500CECDA3 /* BebasNeue.otf */,
-				8F3B35C318FE18FB00CECDA3 /* AvenirLTStd-Medium.otf */,
+				8F86007A18FF5BB000D9F60E /* Fonts */,
 				8F1D6AB818F6464F0073B818 /* AppDelegate.h */,
+				8F86007D18FF721700D9F60E /* zerog.jpg */,
 				8F1D6AB918F6464F0073B818 /* AppDelegate.m */,
 				8F1D6ABB18F6464F0073B818 /* Main.storyboard */,
 				8F24185D18FC670900B569A4 /* FeedViewController.h */,
@@ -221,6 +222,16 @@
 				8F1D6AD118F6464F0073B818 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F86007A18FF5BB000D9F60E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8F3B35BF18FE179700CECDA3 /* ProximaNova-Regular.otf */,
+				8F3B35C118FE17A500CECDA3 /* BebasNeue.otf */,
+				8F3B35C318FE18FB00CECDA3 /* AvenirLTStd-Medium.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +316,7 @@
 				8F3B35C418FE18FB00CECDA3 /* AvenirLTStd-Medium.otf in Resources */,
 				8F3B35C218FE17A500CECDA3 /* BebasNeue.otf in Resources */,
 				8F1D6ABD18F6464F0073B818 /* Main.storyboard in Resources */,
+				8F86007E18FF721700D9F60E /* zerog.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

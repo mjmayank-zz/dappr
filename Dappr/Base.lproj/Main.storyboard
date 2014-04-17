@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller-->
+        <!--Feed View Controller - Dappr-->
         <scene sceneID="AU4-Ku-vwB">
             <objects>
                 <viewController id="ty2-JS-ced" customClass="FeedViewController" sceneMemberID="viewController">
@@ -15,9 +15,62 @@
                     <view key="view" contentMode="scaleToFill" id="FR0-d9-rir">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0SF-ft-M4l">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tpf-AK-BQr">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedCell" id="71Z-Cl-cfy">
+                                        <rect key="frame" x="0.0" y="114" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zerog.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-hY-sLV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="100" height="100"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedTitleView" id="nlK-0L-gqB">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apr. 16" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgJ-n3-UMr">
+                                            <rect key="frame" x="8" y="23" width="55" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nb-bu-S3b">
+                                            <rect key="frame" x="257" y="23" width="56" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="ty2-JS-ced" id="He2-Vq-9FK"/>
+                                    <outlet property="delegate" destination="ty2-JS-ced" id="Iyi-f0-BcU"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SyB-Kl-dGy">
+                    <navigationItem key="navigationItem" title="Dappr" id="SyB-Kl-dGy">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="Drk-lb-GHl">
                             <connections>
                                 <segue destination="jVB-4s-hRD" kind="modal" identifier="openedAddView" id="T6k-Z4-D4t"/>
@@ -29,6 +82,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="0SF-ft-M4l" id="1Iv-Fj-r1p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bta-L5-HPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +107,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wry-Ub-VkY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="wry-Ub-VkY">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wry-Ub-VkY" id="TNb-ko-OL9">
@@ -65,8 +121,15 @@
                             <outlet property="delegate" destination="Lj9-u6-SAS" id="vwy-re-HIp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3hN-JR-Ev9"/>
+                    <navigationItem key="navigationItem" id="3hN-JR-Ev9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="G8K-Ow-nKp">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="Lj9-u6-SAS" id="ZWK-nP-Rg1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="saveButton" destination="G8K-Ow-nKp" id="GkM-U1-Udf"/>
                         <outlet property="searchDisplayController" destination="QZd-S9-kMz" id="8nk-KG-XiO"/>
                         <outlet property="tableView" destination="XbP-4Q-G8u" id="qi7-p6-KP3"/>
                     </connections>
@@ -82,7 +145,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1429" y="79"/>
+            <point key="canvasLocation" x="1472" y="76"/>
         </scene>
         <!--Add Purchase View Controller-->
         <scene sceneID="EkR-YM-ihH">
@@ -198,6 +261,9 @@
             <point key="canvasLocation" x="504" y="-248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="zerog.jpg" width="960" height="960"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

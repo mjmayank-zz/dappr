@@ -34,21 +34,29 @@
     [nc addObserver:self selector:@selector(keyboardWillHide:) name:
      UIKeyboardWillHideNotification object:nil];
     
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
+    
     UIFont *bebas = [UIFont fontWithName:@"Bebas Neue" size:17.0f];
     UIFont *proximaSmall = [UIFont fontWithName:@"ProximaNova-Regular" size:14.0];
     UIFont *proximaBig = [UIFont fontWithName:@"ProximaNova-Regular" size:17.0];
     UIFont *avenir = [UIFont fontWithName:@"Avenir Medium" size:17.0];
     
+#pragma clang diagnostic pop
+    
     [self.priceLabel setFont:avenir];
     [self.tagsLabel setFont:avenir];
+    [self.tagsField setFont:avenir];
     
     self.tagsField.layer.borderWidth = 1.0f;
     self.tagsField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     
-    // To hide keyboard upon hitting done.
-    self.priceTextField.delegate = self;
-    self.tagsField.delegate = self;
-    self.titleTextField.delegate = self;
+    [self.titleTextField setDelegate:self];
+    [self.priceTextField setDelegate:self];
+    
+    UITapGestureRecognizer * gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
+    
+    [self.view addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -171,6 +179,22 @@
 
 - (IBAction)showChooser:(id)sender {
     [self selectPhoto];
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+#pragma mark - UITextFieldDelegate
+
+
+- (void) viewTapped{
+    [self.titleTextField resignFirstResponder];
+    [self.priceTextField resignFirstResponder];
+    [self.tagsField resignFirstResponder];
 }
 
 @end

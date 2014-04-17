@@ -37,6 +37,8 @@
     self.tableView.dataSource = self;
     
     self.array = [[NSArray arrayWithObjects:@"blue jeans", @"black shirt", nil] mutableCopy];
+    
+    self.selected = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -136,6 +138,32 @@
 }
 */
 
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"fuck raj");
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        if([self.selected containsObject:[self.searchResults objectAtIndex:indexPath.row]]){
+            [self.selected removeObject:[self.searchResults objectAtIndex:indexPath.row]];
+        }
+        else{
+            [self.selected addObject:[self.searchResults objectAtIndex:indexPath.row]];
+        }
+    } else {
+        if([self.selected containsObject:[self.array objectAtIndex:indexPath.row]]){
+            [self.selected removeObject:[self.array objectAtIndex:indexPath.row]];
+        }
+        else{
+            [self.selected addObject:[self.array objectAtIndex:indexPath.row]];
+        }
+    }
+    
+    NSLog(@"%@", self.selected);
+    
+}
+
+
+
 #pragma mark - SearchDelegate
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
@@ -152,6 +180,16 @@
                                                      selectedScopeButtonIndex]]];
     
     return YES;
+}
+
+- (IBAction)saveButtonPressed:(id)sender {
+//    for(PFObject * item in self.selected){
+//        [item incrementKey:@"timesWorn"];
+//        [item saveInBackground];
+        
+//    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
