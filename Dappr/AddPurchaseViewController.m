@@ -44,6 +44,11 @@
     
     self.tagsField.layer.borderWidth = 1.0f;
     self.tagsField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    
+    // To hide keyboard upon hitting done.
+    self.priceTextField.delegate = self;
+    self.tagsField.delegate = self;
+    self.titleTextField.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -96,6 +101,11 @@
 }
 */
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 - (IBAction)saveButtonPressed:(id)sender {
     NSLog(@"Save pressed");
     PFObject *item = [[PFObject alloc] initWithClassName:@"ClothingItem"];
@@ -104,10 +114,16 @@
     NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
     PFFile *imageFile = [PFFile fileWithName:@"clothing.png" data:imageData];
 
+    // Split up the tags based on semicolons.
+    NSArray *tags = [_tagsField.text componentsSeparatedByString:@";"];
+    
+    
+    
     item[@"clothingImage"] = imageFile;
     item[@"title"] = _titleTextField.text;
     item[@"price"] = _priceTextField.text;
-    item[@"timesWorn"] = 0;
+    item[@"timesWorn"] = @0;
+    [item addUniqueObjectsFromArray:tags forKey:@"tags"];
     
     [item saveInBackground];
 }
@@ -138,6 +154,16 @@
     [UIView setAnimationDuration: movementDuration];
     view.frame = CGRectOffset(view.frame, 0, movement);
     [UIView commitAnimations];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range
+ replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 - (IBAction)showChooser:(id)sender {
