@@ -11,6 +11,7 @@
 
 @interface FeedViewController : UIViewController<PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray * array;
 
 - (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue;
 

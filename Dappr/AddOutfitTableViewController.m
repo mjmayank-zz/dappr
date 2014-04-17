@@ -36,7 +36,32 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.array = [[NSArray arrayWithObjects:@"blue jeans", @"black shirt", nil] mutableCopy];
+    PFQuery *query = [PFQuery queryWithClassName:@"ClothingItem"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            
+            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
+            
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+            dispatch_async(queue, ^{
+                
+                self.array = [objects mutableCopy];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [self.tableView reloadData];
+                    
+                });
+            });
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
+//    self.array = [[NSArray arrayWithObjects:@"blue jeans", @"black shirt", nil] mutableCopy];
     
     self.selected = [[NSMutableArray alloc] init];
 }
@@ -79,9 +104,9 @@
     
     NSString *clothing = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        clothing = [self.searchResults objectAtIndex:indexPath.row];
+        clothing = [self.searchResults objectAtIndex:indexPath.row][@"title"];
     } else {
-        clothing = [self.array objectAtIndex:indexPath.row];
+        clothing = [self.array objectAtIndex:indexPath.row][@"title"];
     }
     
     cell.textLabel.text = clothing;
@@ -168,7 +193,7 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"self contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"title contains[c] %@", searchText];
     self.searchResults = [self.array filteredArrayUsingPredicate:resultPredicate];
 }
 
@@ -183,11 +208,20 @@
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
-//    for(PFObject * item in self.selected){
-//        [item incrementKey:@"timesWorn"];
-//        [item saveInBackground];
+    NSMutableArray * save = [[NSMutableArray alloc] init];
+    
+    for(PFObject * item in self.selected){
+        [item incrementKey:@"timesWorn"];
+        [item saveInBackground];
         
-//    }
+        [save addObject:[item objectId]];
+    }
+    
+    
+    PFObject * item = [[PFObject alloc] initWithClassName:@"Outfit"];
+    
+    [item addObject:save forKey:@"Clothes"];
+    [item saveInBackground];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

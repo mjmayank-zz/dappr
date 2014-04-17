@@ -109,11 +109,6 @@
 }
 */
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return NO;
-}
-
 - (IBAction)saveButtonPressed:(id)sender {
     NSLog(@"Save pressed");
     PFObject *item = [[PFObject alloc] initWithClassName:@"ClothingItem"];

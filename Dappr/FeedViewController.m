@@ -28,10 +28,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    PFQuery *query = [PFQuery queryWithClassName:@"outfits"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Outfit"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
+            
+            self.array = objects;
+            
             
             NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
             

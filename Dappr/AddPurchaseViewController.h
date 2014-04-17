@@ -19,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *tagsLabel;
 @property (strong, nonatomic) IBOutlet UIButton *chooseButton;
 - (IBAction)showChooser:(id)sender;
-- (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue;
 @property (strong, nonatomic) IBOutlet UITextView *tagsField;
 
 @end
