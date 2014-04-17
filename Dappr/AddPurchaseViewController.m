@@ -126,6 +126,9 @@
     [item addUniqueObjectsFromArray:tags forKey:@"tags"];
     
     [item saveInBackground];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Outfit saved." message:@"" delegate:nil cancelButtonTitle:@"Continue" otherButtonTitles:nil];
+    [alert show];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
