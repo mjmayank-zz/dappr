@@ -95,7 +95,7 @@
 }
 
 - (IBAction)cancelButtonClicked:(UIStoryboardSegue *)segue {
-    NSLog(@"fuck mayank");
+    NSLog(@"cancel button clicked");
 }
 
 #pragma mark - UICollectionViewDataSource
