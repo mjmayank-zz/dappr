@@ -132,7 +132,7 @@
     
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:self.array.count];
 	for (PFObject *dic in self.array) {
-		[values addObject:[dic valueForKey:@"price"]];
+		[values addObject:[dic valueForKey:@"timesWorn"]];
 	}
 	return values;
 }
