@@ -44,6 +44,7 @@
                                         <size key="customSize" width="100" height="100"/>
                                         <connections>
                                             <outlet property="imageView" destination="dk4-hY-sLV" id="3v7-3f-jqP"/>
+                                            <segue destination="IHw-G9-JTk" kind="push" id="g1C-QY-QN9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -77,6 +78,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="4XG-x1-WoG"/>
                     <navigationItem key="navigationItem" title="Dappr" id="SyB-Kl-dGy">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="Drk-lb-GHl">
                             <connections>
@@ -96,6 +98,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bta-L5-HPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="927" y="-248"/>
+        </scene>
+        <!--Tree Map View Controller - Item-->
+        <scene sceneID="JV5-Df-5AN">
+            <objects>
+                <viewController id="IHw-G9-JTk" customClass="TreeMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bTq-qQ-3IU"/>
+                        <viewControllerLayoutGuide type="bottom" id="gOL-jg-sQC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K87-i3-FHR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bR-4P-uJH" customClass="TreemapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="MZz-HG-dQf"/>
+                    <navigationItem key="navigationItem" id="XgP-Cx-QXe"/>
+                    <connections>
+                        <outlet property="treeMapView" destination="7bR-4P-uJH" id="tXP-vY-ZDf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="185-x7-zEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="448"/>
         </scene>
         <!--Add Outfit Table View Controller-->
         <scene sceneID="tSu-sP-0Fw">
@@ -260,12 +292,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ty2-JS-ced" kind="relationship" relationship="rootViewController" id="2Mr-0n-ygN"/>
+                        <segue destination="ty2-JS-ced" kind="relationship" relationship="rootViewController" id="NgV-8s-TMV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ME5-Iv-kSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="504" y="-248"/>
+            <point key="canvasLocation" x="380" y="-716"/>
         </scene>
     </scenes>
     <resources>

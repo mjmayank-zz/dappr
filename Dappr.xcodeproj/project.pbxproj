@@ -42,6 +42,10 @@
 		8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9130D418FC62F200A4A120 /* AddPurchaseViewController.m */; };
 		8FDC5CAB18FFC2C300E0037D /* customCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5CAA18FFC2C300E0037D /* customCell.m */; };
 		8FDC5CAE18FFC6C800E0037D /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDC5CAD18FFC6C800E0037D /* TitleView.m */; };
+		8FEF0070190055070092E064 /* TreemapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF006D190055070092E064 /* TreemapView.m */; };
+		8FEF0071190055070092E064 /* TreemapViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF006F190055070092E064 /* TreemapViewCell.m */; };
+		8FEF0074190055E40092E064 /* TreeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF0073190055E40092E064 /* TreeMapViewController.m */; };
+		8FEF0076190064C80092E064 /* student_t-shirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF0075190064C80092E064 /* student_t-shirt.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,13 @@
 		8FDC5CAA18FFC2C300E0037D /* customCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCell.m; sourceTree = "<group>"; };
 		8FDC5CAC18FFC6C800E0037D /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
 		8FDC5CAD18FFC6C800E0037D /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
+		8FEF006C190055070092E064 /* TreemapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreemapView.h; sourceTree = "<group>"; };
+		8FEF006D190055070092E064 /* TreemapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreemapView.m; sourceTree = "<group>"; };
+		8FEF006E190055070092E064 /* TreemapViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreemapViewCell.h; sourceTree = "<group>"; };
+		8FEF006F190055070092E064 /* TreemapViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreemapViewCell.m; sourceTree = "<group>"; };
+		8FEF0072190055E40092E064 /* TreeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeMapViewController.h; sourceTree = "<group>"; };
+		8FEF0073190055E40092E064 /* TreeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeMapViewController.m; sourceTree = "<group>"; };
+		8FEF0075190064C80092E064 /* student_t-shirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "student_t-shirt.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,10 +196,14 @@
 			isa = PBXGroup;
 			children = (
 				8F86007A18FF5BB000D9F60E /* Fonts */,
+				8FEF006B190055070092E064 /* TreemapKit */,
 				8F1D6AB818F6464F0073B818 /* AppDelegate.h */,
+				8FEF0075190064C80092E064 /* student_t-shirt.jpg */,
 				8F86007D18FF721700D9F60E /* zerog.jpg */,
 				8F1D6AB918F6464F0073B818 /* AppDelegate.m */,
 				8F1D6ABB18F6464F0073B818 /* Main.storyboard */,
+				8FEF0072190055E40092E064 /* TreeMapViewController.h */,
+				8FEF0073190055E40092E064 /* TreeMapViewController.m */,
 				8FDC5CA918FFC2C300E0037D /* customCell.h */,
 				8FDC5CAA18FFC2C300E0037D /* customCell.m */,
 				8F24185D18FC670900B569A4 /* FeedViewController.h */,
@@ -242,6 +257,17 @@
 				8F3B35C318FE18FB00CECDA3 /* AvenirLTStd-Medium.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		8FEF006B190055070092E064 /* TreemapKit */ = {
+			isa = PBXGroup;
+			children = (
+				8FEF006C190055070092E064 /* TreemapView.h */,
+				8FEF006D190055070092E064 /* TreemapView.m */,
+				8FEF006E190055070092E064 /* TreemapViewCell.h */,
+				8FEF006F190055070092E064 /* TreemapViewCell.m */,
+			);
+			path = TreemapKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +349,7 @@
 				8F1D6AC218F6464F0073B818 /* Images.xcassets in Resources */,
 				8F3B35C018FE179700CECDA3 /* ProximaNova-Regular.otf in Resources */,
 				8F1D6AB418F6464F0073B818 /* InfoPlist.strings in Resources */,
+				8FEF0076190064C80092E064 /* student_t-shirt.jpg in Resources */,
 				8F3B35C418FE18FB00CECDA3 /* AvenirLTStd-Medium.otf in Resources */,
 				8F3B35C218FE17A500CECDA3 /* BebasNeue.otf in Resources */,
 				8F1D6ABD18F6464F0073B818 /* Main.storyboard in Resources */,
@@ -346,11 +373,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FDC5CAB18FFC2C300E0037D /* customCell.m in Sources */,
+				8FEF0074190055E40092E064 /* TreeMapViewController.m in Sources */,
+				8FEF0070190055070092E064 /* TreemapView.m in Sources */,
 				8F3B35C718FE1BCA00CECDA3 /* AddOutfitTableViewController.m in Sources */,
 				8F1D6ABA18F6464F0073B818 /* AppDelegate.m in Sources */,
 				8F9130D518FC62F200A4A120 /* AddPurchaseViewController.m in Sources */,
 				8FDC5CAE18FFC6C800E0037D /* TitleView.m in Sources */,
 				8F24185F18FC670900B569A4 /* FeedViewController.m in Sources */,
+				8FEF0071190055070092E064 /* TreemapViewCell.m in Sources */,
 				8F1D6AB618F6464F0073B818 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
